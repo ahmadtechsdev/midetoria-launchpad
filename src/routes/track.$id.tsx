@@ -83,7 +83,7 @@ function TrackResult() {
             <p className="text-sm opacity-90">{shipment.eta}</p>
           </section>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1.1fr_1fr]">
             <section aria-label="Delivery progress" className="rounded-2xl border border-border p-6">
               <h2 className="text-lg">Delivery progress</h2>
               <ol className="mt-6 space-y-0">
