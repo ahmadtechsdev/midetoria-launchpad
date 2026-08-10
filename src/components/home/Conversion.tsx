@@ -57,11 +57,7 @@ export function Packages() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  asChild
-                  variant={p.popular ? "brand" : "outlineNavy"}
-                  className="mt-6 h-11"
-                >
+                <Button asChild variant={p.popular ? "brand" : "outlineNavy"} className="mt-6 h-11">
                   <a href={whatsappLink(p.message)} target="_blank" rel="noreferrer">
                     Talk to Us
                   </a>
@@ -146,10 +142,7 @@ export function QuoteFlow() {
                 </div>
                 <div>
                   <Label htmlFor="q-scope">Delivery type</Label>
-                  <Select
-                    value={data.scope}
-                    onValueChange={(v) => setData({ ...data, scope: v })}
-                  >
+                  <Select value={data.scope} onValueChange={(v) => setData({ ...data, scope: v })}>
                     <SelectTrigger id="q-scope" className="mt-2 h-11">
                       <SelectValue placeholder="Local or interstate" />
                     </SelectTrigger>
@@ -286,8 +279,7 @@ export function Testimonials() {
                 <Quote className="size-6 text-brand" />
                 <blockquote className="mt-4 text-navy">{t.quote}</blockquote>
                 <figcaption className="mt-5 text-sm text-muted-foreground">
-                  <span className="font-semibold text-navy">{t.name}</span> — {t.business},{" "}
-                  {t.type}
+                  <span className="font-semibold text-navy">{t.name}</span> — {t.business}, {t.type}
                 </figcaption>
               </figure>
             </Reveal>

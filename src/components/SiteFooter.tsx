@@ -79,7 +79,12 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a className="hover:text-brand" href={BRAND.instagram} target="_blank" rel="noreferrer">
+              <a
+                className="hover:text-brand"
+                href={BRAND.instagram}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {BRAND.instagramHandle}
               </a>
             </li>

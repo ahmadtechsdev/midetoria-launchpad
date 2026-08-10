@@ -91,10 +91,22 @@ const SERVICES: { Icon: LucideIcon; label: string; copy: string }[] = [
   { Icon: Truck, label: "Local Delivery", copy: "Same-day dispatch within Abuja and Lagos." },
   { Icon: RouteIcon, label: "Interstate Delivery", copy: "Reliable routes across key states." },
   { Icon: Package, label: "Business Logistics", copy: "Daily order fulfilment for online stores." },
-  { Icon: Building2, label: "Corporate Logistics", copy: "Documents and equipment, handled formally." },
+  {
+    Icon: Building2,
+    label: "Corporate Logistics",
+    copy: "Documents and equipment, handled formally.",
+  },
   { Icon: Boxes, label: "Bulk Distribution", copy: "Multi-drop routes for large consignments." },
-  { Icon: CalendarClock, label: "Scheduled Pickups", copy: "Fixed pickup windows you can plan around." },
-  { Icon: UserCheck, label: "Dedicated Business Accounts", copy: "One contact who knows your operation." },
+  {
+    Icon: CalendarClock,
+    label: "Scheduled Pickups",
+    copy: "Fixed pickup windows you can plan around.",
+  },
+  {
+    Icon: UserCheck,
+    label: "Dedicated Business Accounts",
+    copy: "One contact who knows your operation.",
+  },
 ];
 
 export function Services() {
@@ -241,10 +253,7 @@ export function Industries() {
   return (
     <section id="industries" className="bg-tint py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="Industries"
-          title="Built for the businesses we serve."
-        />
+        <SectionHeading eyebrow="Industries" title="Built for the businesses we serve." />
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {INDUSTRIES.map(({ Icon, label }, i) => (
             <Reveal as="li" delay={i * 40} key={label}>
@@ -265,7 +274,11 @@ export function Industries() {
 export function Coverage() {
   const cards = [
     { Icon: MapPinned, title: "Primary Hub", copy: "Abuja & Lagos — same-day local delivery." },
-    { Icon: RouteIcon, title: "Interstate Routes", copy: "Port Harcourt, Delta and Northern Nigeria." },
+    {
+      Icon: RouteIcon,
+      title: "Interstate Routes",
+      copy: "Port Harcourt, Delta and Northern Nigeria.",
+    },
     { Icon: Cpu, title: "Future Expansion", copy: "Nationwide coverage as our fleet grows." },
   ];
   return (

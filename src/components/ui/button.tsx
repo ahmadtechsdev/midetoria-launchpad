@@ -19,7 +19,8 @@ const buttonVariants = cva(
         brand:
           "bg-brand text-brand-foreground shadow-glow hover:bg-brand/90 hover:-translate-y-0.5 transition-all",
         navy: "bg-navy text-brand-foreground hover:bg-navy-soft",
-        outlineNavy: "border border-navy/25 bg-transparent text-navy hover:bg-navy hover:text-brand-foreground",
+        outlineNavy:
+          "border border-navy/25 bg-transparent text-navy hover:bg-navy hover:text-brand-foreground",
         outlineLight:
           "border border-white/45 bg-transparent text-brand-foreground hover:bg-white/10",
       },

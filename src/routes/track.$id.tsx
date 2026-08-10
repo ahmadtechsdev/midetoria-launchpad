@@ -55,8 +55,8 @@ function TrackResult() {
           </div>
           <h1 className="mt-6 text-2xl sm:text-3xl">We couldn't find that tracking ID</h1>
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Double-check the ID in your delivery confirmation SMS or email. If it still doesn't work,
-            our team can locate your parcel in minutes.
+            Double-check the ID in your delivery confirmation SMS or email. If it still doesn't
+            work, our team can locate your parcel in minutes.
           </p>
           <Button asChild variant="brand" size="lg" className="mt-6">
             <a
@@ -84,20 +84,26 @@ function TrackResult() {
           </section>
 
           <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1.1fr_1fr]">
-            <section aria-label="Delivery progress" className="rounded-2xl border border-border p-6">
+            <section
+              aria-label="Delivery progress"
+              className="rounded-2xl border border-border p-6"
+            >
               <h2 className="text-lg">Delivery progress</h2>
               <ol className="mt-6 space-y-0">
                 {shipment.steps.map((step, i) => {
                   const done = Boolean(step.timestamp);
                   const currentIndex = shipment.steps.findIndex((s) => !s.timestamp) - 1;
-                  const isCurrent = i === (currentIndex < 0 ? shipment.steps.length - 1 : currentIndex);
+                  const isCurrent =
+                    i === (currentIndex < 0 ? shipment.steps.length - 1 : currentIndex);
                   return (
                     <li key={step.label} className="flex gap-4">
                       <div className="flex flex-col items-center">
                         <span
                           className={cn(
                             "grid h-9 w-9 shrink-0 place-items-center rounded-full text-xs font-semibold",
-                            done ? "bg-brand text-brand-foreground" : "bg-tint text-muted-foreground",
+                            done
+                              ? "bg-brand text-brand-foreground"
+                              : "bg-tint text-muted-foreground",
                             isCurrent && "animate-pulse-ring",
                           )}
                         >
@@ -105,10 +111,7 @@ function TrackResult() {
                         </span>
                         {i < shipment.steps.length - 1 && (
                           <span
-                            className={cn(
-                              "my-1 w-px flex-1",
-                              done ? "bg-brand/50" : "bg-border",
-                            )}
+                            className={cn("my-1 w-px flex-1", done ? "bg-brand/50" : "bg-border")}
                             style={{ minHeight: 28 }}
                           />
                         )}

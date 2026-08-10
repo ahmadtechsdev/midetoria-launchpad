@@ -66,7 +66,14 @@ const DEMO: Record<string, Shipment> = {
     packageType: "Bulk carton — 12kg",
     steps: STEP_LABELS.map((label, i) => ({
       label,
-      timestamp: ["Sun, 04:10pm", "Sun, 04:35pm", "Mon, 09:00am", "Mon, 12:20pm", "Tue, 10:02am", "Tue, 02:41pm"][i]!,
+      timestamp: [
+        "Sun, 04:10pm",
+        "Sun, 04:35pm",
+        "Mon, 09:00am",
+        "Mon, 12:20pm",
+        "Tue, 10:02am",
+        "Tue, 02:41pm",
+      ][i]!,
     })),
   },
   "MDT-2381120": {
