@@ -191,6 +191,18 @@ export function Process() {
           <ol className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {STEPS.map((s, i) => (
               <Reveal as="li" delay={i * 60} key={s} className="relative">
+                {i < STEPS.length - 1 && (
+                  <>
+                    <span
+                      aria-hidden
+                      className="absolute top-12 left-6 h-6 border-l border-dashed border-brand/40 sm:hidden"
+                    />
+                    <span
+                      aria-hidden
+                      className="absolute top-6 right-0 left-16 hidden border-t border-dashed border-brand/40 sm:block"
+                    />
+                  </>
+                )}
                 <div className="flex items-start gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-dashed border-brand/50 bg-brand/10 font-bold text-brand">
                     {i + 1}
