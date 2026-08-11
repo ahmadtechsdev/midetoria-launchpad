@@ -121,7 +121,7 @@ export function Services() {
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map(({ Icon, label, copy }, i) => (
             <Reveal as="li" delay={i * 50} key={label}>
-              <article className="group h-full rounded-2xl bg-navy p-7 transition-all hover:-translate-y-1 hover:shadow-glow">
+              <article className="group h-full rounded-2xl bg-navy p-6 sm:p-7 transition-all hover:-translate-y-1 hover:shadow-glow">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-brand text-brand-foreground">
                   <Icon className="size-5" />
                 </span>
@@ -202,7 +202,7 @@ export function Process() {
         <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((s, i) => (
             <Reveal as="li" delay={i * 60} key={s.label}>
-              <div className="flex h-full gap-4 rounded-2xl bg-card p-5 transition-shadow hover:shadow-lift sm:p-6">
+              <div className="flex h-full gap-4 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-lift sm:p-6">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
                   {i + 1}
                 </span>
@@ -221,7 +221,7 @@ export function Process() {
               src={teamPhoto.url}
               alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
               loading="lazy"
-              className="h-64 w-full object-cover object-top sm:h-full"
+              className="h-64 w-full object-cover object-[center_30%] sm:h-full"
             />
             <div className="p-6 sm:p-8">
               <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
