@@ -23,8 +23,8 @@ import {
   Warehouse,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import courierImg from "@/assets/courier-scooter.png";
 import doorstepImg from "@/assets/doorstep-delivery.png";
+import teamPhoto from "@/assets/midetoria-team.jpg.asset.json";
 import { Logo } from "@/components/Logo";
 import { NigeriaMap } from "@/components/NigeriaMap";
 import { Reveal } from "@/components/Reveal";
@@ -121,7 +121,7 @@ export function Services() {
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map(({ Icon, label, copy }, i) => (
             <Reveal as="li" delay={i * 50} key={label}>
-              <article className="group h-full rounded-2xl bg-navy p-7 transition-all hover:-translate-y-1 hover:shadow-glow">
+              <article className="group h-full rounded-2xl bg-navy p-6 sm:p-7 transition-all hover:-translate-y-1 hover:shadow-glow">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-brand text-brand-foreground">
                   <Icon className="size-5" />
                 </span>
@@ -180,13 +180,13 @@ export function WhyChoose() {
   );
 }
 
-const STEPS = [
-  "You Receive an Order",
-  "Book Pickup",
-  "We Collect",
-  "We Deliver",
-  "Customer Receives",
-  "Delivery Confirmation",
+const STEPS: { label: string; copy: string }[] = [
+  { label: "You Receive an Order", copy: "A customer places an order with your business." },
+  { label: "Book Pickup", copy: "Send us the details on WhatsApp or your account manager." },
+  { label: "We Collect", copy: "A vetted rider picks up within your agreed window." },
+  { label: "We Deliver", copy: "Local same-day or interstate on scheduled routes." },
+  { label: "Customer Receives", copy: "Doorstep handover, handled professionally." },
+  { label: "Delivery Confirmation", copy: "You get confirmation once the parcel lands." },
 ];
 
 export function Process() {
@@ -199,40 +199,44 @@ export function Process() {
           copy="Six simple steps, from the moment an order lands to the confirmation that it arrived."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_320px] lg:items-center">
-          <ol className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {STEPS.map((s, i) => (
-              <Reveal as="li" delay={i * 60} key={s} className="relative">
-                {i < STEPS.length - 1 && (
-                  <>
-                    <span
-                      aria-hidden
-                      className="absolute top-12 left-6 h-6 border-l border-dashed border-brand/40 sm:hidden"
-                    />
-                    <span
-                      aria-hidden
-                      className="absolute top-6 right-0 left-16 hidden border-t border-dashed border-brand/40 sm:block"
-                    />
-                  </>
-                )}
-                <div className="flex items-start gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-dashed border-brand/50 bg-brand/10 font-bold text-brand">
-                    {i + 1}
-                  </span>
-                  <p className="pt-3 font-medium text-navy">{s}</p>
+        <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {STEPS.map((s, i) => (
+            <Reveal as="li" delay={i * 60} key={s.label}>
+              <div className="flex h-full gap-4 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-lift sm:p-6">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
+                  {i + 1}
+                </span>
+                <div className="min-w-0">
+                  <p className="font-semibold text-navy">{s.label}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.copy}</p>
                 </div>
-              </Reveal>
-            ))}
-          </ol>
-          <img
-            src={courierImg}
-            alt="Midetoria courier holding a parcel beside a delivery scooter"
-            loading="lazy"
-            width={1024}
-            height={1024}
-            className="mx-auto w-full max-w-xs"
-          />
-        </div>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+
+        <Reveal className="mt-10 overflow-hidden rounded-3xl bg-navy">
+          <div className="grid gap-0 sm:grid-cols-[1.2fr_1fr] sm:items-stretch">
+            <img
+              src={teamPhoto.url}
+              alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
+              loading="lazy"
+              className="h-64 w-full object-cover object-[center_30%] sm:h-full"
+            />
+            <div className="p-6 sm:p-8">
+              <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
+                Our people
+              </p>
+              <h3 className="mt-3 text-2xl text-white">
+                Real riders. Branded. Trained. Accountable.
+              </h3>
+              <p className="mt-3 text-sm text-white/70">
+                Every pickup and delivery is handled by a vetted Midetoria rider in uniform — so
+                your customers always know exactly who is at their door.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
