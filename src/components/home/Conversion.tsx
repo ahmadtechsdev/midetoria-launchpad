@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, LayoutDashboard, Phone, Quote } from "lucide-react";
 import { useState } from "react";
 import ceo from "@/assets/ceo.jpg.asset.json";
+import portrait from "@/assets/brand-portrait.png.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/home/HomeSections";
 import {
@@ -272,19 +273,39 @@ export function Testimonials() {
     <section className="bg-tint py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Social proof" title="What partners say." />
-        <ul className="mt-12 grid gap-6 lg:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal as="li" delay={i * 70} key={t.name}>
-              <figure className="h-full rounded-2xl bg-card p-7">
-                <Quote className="size-6 text-brand" />
-                <blockquote className="mt-4 text-navy">{t.quote}</blockquote>
-                <figcaption className="mt-5 text-sm text-muted-foreground">
-                  <span className="font-semibold text-navy">{t.name}</span> — {t.business}, {t.type}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </ul>
+        <div className="mt-12 grid gap-6 lg:grid-cols-[360px_1fr] lg:items-start">
+          <Reveal className="overflow-hidden rounded-3xl bg-navy">
+            <img
+              src={portrait.url}
+              alt="Fashion brand founder who ships with Midetoria Logistics"
+              loading="lazy"
+              className="h-72 w-full object-cover object-top lg:h-96"
+            />
+            <div className="p-6">
+              <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
+                Brands we move
+              </p>
+              <p className="mt-2 text-sm text-white/70">
+                From fashion labels to pharmacies, growing Nigerian brands trust us with the last
+                mile.
+              </p>
+            </div>
+          </Reveal>
+          <ul className="grid gap-6 sm:grid-cols-2">
+            {TESTIMONIALS.map((t, i) => (
+              <Reveal as="li" delay={i * 70} key={t.name}>
+                <figure className="h-full rounded-2xl bg-card p-6 sm:p-7">
+                  <Quote className="size-6 text-brand" />
+                  <blockquote className="mt-4 text-navy">{t.quote}</blockquote>
+                  <figcaption className="mt-5 text-sm text-muted-foreground">
+                    <span className="font-semibold text-navy">{t.name}</span> — {t.business},{" "}
+                    {t.type}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
         <p className="mt-6 text-xs text-muted-foreground">
           Placeholder testimonials — swap with real partner quotes when ready.
         </p>
