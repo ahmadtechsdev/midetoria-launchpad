@@ -191,7 +191,7 @@ const STEPS: { label: string; copy: string }[] = [
 
 export function Process() {
   return (
-    <section className="bg-tint py-16 sm:py-24">
+    <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="How it works"
