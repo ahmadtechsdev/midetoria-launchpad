@@ -12,6 +12,8 @@
   --color-brand: var(--brand);
   --color-brand-foreground: oklch(1 0 0);
   --color-tint: var(--tint);
+  --color-whatsapp: oklch(0.75 0.19 149);
+  --color-whatsapp-foreground: oklch(1 0 0);
   --shadow-lift: 0 24px 60px -24px color-mix(in oklab, var(--navy) 32%, transparent);
   --shadow-glow: 0 18px 40px -18px color-mix(in oklab, var(--brand) 55%, transparent);
   --animate-reveal: reveal 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -31,13 +33,13 @@
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 55%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in oklab, oklch(0.75 0.19 149) 55%, transparent);
   }
   70% {
-    box-shadow: 0 0 0 16px color-mix(in oklab, var(--brand) 0%, transparent);
+    box-shadow: 0 0 0 16px color-mix(in oklab, oklch(0.75 0.19 149) 0%, transparent);
   }
   100% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 0%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in oklab, oklch(0.75 0.19 149) 0%, transparent);
   }
 }
 
