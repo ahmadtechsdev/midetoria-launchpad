@@ -216,24 +216,37 @@ export function Process() {
         </ol>
 
         <Reveal className="mt-10 overflow-hidden rounded-3xl bg-navy">
-          <div className="grid gap-0 sm:grid-cols-[1.2fr_1fr] sm:items-stretch">
+          <div className="grid sm:grid-cols-[1.1fr_1fr]">
             <img
               src={teamPhoto.url}
               alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
               loading="lazy"
-              className="h-64 w-full object-cover object-[center_30%] sm:h-full"
+              className="h-64 w-full object-cover object-[center_30%] sm:h-full sm:max-h-[26rem]"
             />
-            <div className="p-6 sm:p-8">
+            <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 lg:p-10">
               <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
                 Our people
               </p>
-              <h3 className="mt-3 text-2xl text-white">
+              <h3 className="text-2xl text-white sm:text-3xl">
                 Real riders. Branded. Trained. Accountable.
               </h3>
-              <p className="mt-3 text-sm text-white/70">
+              <p className="text-sm text-white/70">
                 Every pickup and delivery is handled by a vetted Midetoria rider in uniform — so
                 your customers always know exactly who is at their door.
               </p>
+              <ul className="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
+                {[
+                  "Uniformed, ID-verified riders",
+                  "Trained on parcel handling",
+                  "Live pickup confirmation",
+                  "One account manager per brand",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-white/80">
+                    <Check className="mt-0.5 size-4 shrink-0 text-brand" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Reveal>
