@@ -216,37 +216,56 @@ export function Process() {
         </ol>
 
         <Reveal className="mt-10 overflow-hidden rounded-3xl bg-navy">
-          <div className="grid sm:grid-cols-[1.1fr_1fr]">
-            <img
-              src={teamPhoto.url}
-              alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
-              loading="lazy"
-              className="h-64 w-full object-cover object-[center_30%] sm:h-full sm:max-h-[26rem]"
-            />
-            <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 lg:p-10">
-              <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
-                Our people
-              </p>
-              <h3 className="text-2xl text-white sm:text-3xl">
-                Real riders. Branded. Trained. Accountable.
-              </h3>
-              <p className="text-sm text-white/70">
-                Every pickup and delivery is handled by a vetted Midetoria rider in uniform — so
-                your customers always know exactly who is at their door.
-              </p>
-              <ul className="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
+          <div className="grid items-stretch lg:grid-cols-2">
+            <div className="relative min-h-[16rem] lg:min-h-[30rem]">
+              <img
+                src={teamPhoto.url}
+                alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
+                loading="lazy"
+                className="h-full w-full object-cover object-[center_30%] lg:absolute lg:inset-0"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/80 to-transparent lg:from-navy/50" />
+            </div>
+            <div className="flex flex-col gap-6 p-6 sm:p-9 lg:p-12">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
+                  Our people
+                </p>
+                <h3 className="text-2xl leading-tight text-white sm:text-3xl lg:text-4xl">
+                  Real riders. Branded. Trained. Accountable.
+                </h3>
+                <p className="text-sm leading-relaxed text-white/70 sm:text-base">
+                  Every pickup and delivery is handled by a vetted Midetoria rider in uniform — so
+                  your customers always know exactly who is at their door.
+                </p>
+              </div>
+
+              <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
                 {[
                   "Uniformed, ID-verified riders",
                   "Trained on parcel handling",
                   "Live pickup confirmation",
                   "One account manager per brand",
                 ].map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-white/80">
+                  <li key={item} className="flex gap-2.5 text-sm text-white/85">
                     <Check className="mt-0.5 size-4 shrink-0 text-brand" />
-                    <span>{item}</span>
+                    <span className="min-w-0">{item}</span>
                   </li>
                 ))}
               </ul>
+
+              <dl className="mt-auto grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                {[
+                  { v: "100%", l: "Uniformed riders" },
+                  { v: "24/7", l: "WhatsApp support" },
+                  { v: "6", l: "States covered" },
+                ].map((s) => (
+                  <div key={s.l}>
+                    <dt className="text-xl font-bold text-white sm:text-2xl">{s.v}</dt>
+                    <dd className="mt-1 text-xs leading-snug text-white/60">{s.l}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </Reveal>
