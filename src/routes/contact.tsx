@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Instagram, MapPin, Phone } from "lucide-react";
+import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -85,6 +85,7 @@ function ContactPage() {
           <ul className="mt-8 space-y-4">
             {[
               { Icon: Phone, label: BRAND.phoneDisplay, href: `tel:${BRAND.phoneTel}` },
+              { Icon: Mail, label: BRAND.email, href: `mailto:${BRAND.email}` },
               { Icon: MapPin, label: BRAND.address },
               { Icon: Instagram, label: BRAND.instagramHandle, href: BRAND.instagram },
               { Icon: Clock, label: BRAND.hours },

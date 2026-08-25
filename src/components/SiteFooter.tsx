@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook, Mail } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Logo } from "@/components/Logo";
@@ -19,28 +19,22 @@ export function SiteFooter() {
             We don't just move parcels, we move businesses forward.
           </p>
           <div className="mt-6 flex gap-3">
-            <a
-              href={BRAND.instagram}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Midetoria Logistics on Instagram"
-              className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-brand"
-            >
-              <Instagram className="size-5" />
-            </a>
             {[
-              { Icon: Twitter, label: "X (coming soon)" },
-              { Icon: Linkedin, label: "LinkedIn (coming soon)" },
-              { Icon: Facebook, label: "Facebook (coming soon)" },
-            ].map(({ Icon, label }) => (
-              <span
+              { href: BRAND.instagram, label: "Midetoria Logistics on Instagram", Icon: Instagram },
+              { href: BRAND.tiktok, label: "Midetoria Logistics on TikTok", Icon: TikTokIcon },
+              { href: BRAND.facebook, label: "Midetoria Logistics on Facebook", Icon: Facebook },
+              { href: `mailto:${BRAND.email}`, label: "Email Midetoria Logistics", Icon: Mail },
+            ].map(({ href, label, Icon }) => (
+              <a
                 key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={label}
-                title={label}
-                className="grid h-11 w-11 place-items-center rounded-full bg-white/5 text-white/40"
+                className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-brand"
               >
                 <Icon className="size-5" />
-              </span>
+              </a>
             ))}
           </div>
         </div>
@@ -58,7 +52,6 @@ export function SiteFooter() {
           title="Resources"
           items={[
             { label: "FAQ", to: "/", hash: "faq" },
-            { label: "Track Order", to: "/track" },
             { label: "Partnership Packages", to: "/pricing" },
             { label: "Get a Quote", to: "/", hash: "quote" },
           ]}
@@ -72,10 +65,15 @@ export function SiteFooter() {
                 {BRAND.phoneDisplay}
               </a>
             </li>
+            <li>
+              <a className="hover:text-brand" href={`mailto:${BRAND.email}`}>
+                {BRAND.email}
+              </a>
+            </li>
             <li>{BRAND.address}</li>
             <li>
               <a className="hover:text-brand" href={BRAND.website} target="_blank" rel="noreferrer">
-                midetoria.com
+                {BRAND.websiteDisplay}
               </a>
             </li>
             <li>
@@ -128,6 +126,23 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
   );
 }
 
