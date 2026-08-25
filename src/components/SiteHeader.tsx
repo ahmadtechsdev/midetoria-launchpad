@@ -12,7 +12,6 @@ const LINKS = [
   { label: "Services", to: "/", hash: "services" },
   { label: "Industries", to: "/", hash: "industries" },
   { label: "Packages", to: "/pricing", hash: undefined },
-  { label: "Track Order", to: "/track", hash: undefined },
   { label: "About", to: "/", hash: "about" },
   { label: "Contact", to: "/contact", hash: undefined },
 ] as const;
@@ -61,9 +60,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button asChild variant="outlineNavy" size="lg">
-            <Link to="/track">Track Order</Link>
-          </Button>
           <Button asChild variant="brand" size="lg">
             <a href={whatsappLink()} target="_blank" rel="noreferrer">
               Partner With Us
@@ -72,9 +68,6 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <Button asChild variant="outlineNavy" size="sm" className="h-10 px-3">
-            <Link to="/track">Track</Link>
-          </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
@@ -102,9 +95,6 @@ export function SiteHeader() {
                   <a href={whatsappLink()} target="_blank" rel="noreferrer">
                     Chat on WhatsApp
                   </a>
-                </Button>
-                <Button asChild variant="outlineNavy" size="lg" onClick={() => setOpen(false)}>
-                  <Link to="/track">Track Order</Link>
                 </Button>
               </div>
             </SheetContent>
