@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { BadgeCheck, ShieldCheck, Timer } from "lucide-react";
-import { TrackForm } from "@/components/TrackForm";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/brand";
 
@@ -19,7 +18,7 @@ const BADGES = [
 
 export function Hero() {
   return (
-    <section className="triangle-accents relative bg-navy pt-14 pb-56 sm:pt-24 sm:pb-48">
+    <section className="triangle-accents relative bg-navy pt-14 pb-16 sm:pt-24 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
@@ -39,7 +38,7 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild variant="outlineLight" size="xl">
-              <Link to="/track">Track Your Delivery</Link>
+              <Link to="/pricing">See Partnership Packages</Link>
             </Button>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
@@ -50,26 +49,15 @@ export function Hero() {
             ))}
           </ul>
         </div>
-      </div>
 
-      <div className="absolute inset-x-0 -bottom-px translate-y-1/2 px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-6 shadow-lift sm:p-8">
-          <h2 className="text-2xl">Track Your Delivery</h2>
-          <div className="mt-4">
-            <TrackForm compact />
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            You'll find your tracking ID in your delivery confirmation SMS or email.
-          </p>
-          <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6 sm:grid-cols-4">
-            {STATS.map((s) => (
-              <div key={s.label}>
-                <dt className="text-2xl font-bold text-brand">{s.value}</dt>
-                <dd className="text-xs tracking-wide text-muted-foreground uppercase">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <dl className="mt-12 grid grid-cols-2 gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 sm:grid-cols-4 sm:p-8">
+          {STATS.map((s) => (
+            <div key={s.label}>
+              <dt className="text-2xl font-bold text-brand sm:text-3xl">{s.value}</dt>
+              <dd className="mt-1 text-xs tracking-wide text-white/60 uppercase">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
