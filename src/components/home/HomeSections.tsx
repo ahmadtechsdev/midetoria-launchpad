@@ -331,7 +331,7 @@ export function Coverage() {
     {
       Icon: MapPinned,
       title: "Primary Hub",
-      copy: "Abuja & Lagos — same-day local delivery.
+      copy: "Abuja & Lagos — same-day local delivery.",
       states: [],
     },
     {
