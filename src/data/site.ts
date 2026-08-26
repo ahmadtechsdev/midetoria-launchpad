@@ -56,7 +56,7 @@ export const FAQS = [
   },
   {
     q: "Do you handle interstate delivery?",
-    a: "We deliver interstate to Port Harcourt, Delta and Northern Nigeria, with more routes opening as we expand nationwide.",
+    a: "Yes. We deliver interstate to Port Harcourt and Delta, plus the full North Central region (Benue, Kogi, Kwara, Nasarawa, Niger, Plateau), North East region (Adamawa, Bauchi, Borno, Gombe, Taraba, Yobe) and North West region (Jigawa, Kaduna, Kano, Katsina, Kebbi, Sokoto, Zamfara). More routes open as we expand nationwide.",
   },
   {
     q: "Can you pick up from my store every day?",
