@@ -1,4 +1,4 @@
-import logo from "@/assets/midetoria-logo.svg.asset.json";
+import logo from "@/assets/midetoria-logo.svg";
 import { cn } from "@/lib/utils";
 
 export function Logo({
@@ -10,7 +10,7 @@ export function Logo({
 }) {
   return (
     <img
-      src={logo.url}
+      src={logo}
       alt="Midetoria Logistics"
       className={cn("h-11 w-auto", variant === "white" && "brightness-0 invert", className)}
     />
