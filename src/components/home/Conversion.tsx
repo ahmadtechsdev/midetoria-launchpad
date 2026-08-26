@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, LayoutDashboard, Phone, Quote } from "lucide-react";
 import { useState } from "react";
-import ceo from "@/assets/ceo.jpg.asset.json";
-import portrait from "@/assets/brand-portrait.png.asset.json";
+import ceo from "@/assets/ceo.jpg";
+import portrait from "@/assets/brand-portrait.png";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/home/HomeSections";
 import {
@@ -248,7 +248,7 @@ export function Leadership() {
     <section className="py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[380px_1fr] lg:items-center">
         <img
-          src={ceo.url}
+          src={ceo}
           alt="Chief Executive Officer of Midetoria Logistics"
           loading="lazy"
           className="w-full rounded-3xl object-cover"
@@ -276,7 +276,7 @@ export function Testimonials() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[360px_1fr] lg:items-start">
           <Reveal className="overflow-hidden rounded-3xl bg-navy">
             <img
-              src={portrait.url}
+              src={portrait}
               alt="Fashion brand founder who ships with Midetoria Logistics"
               loading="lazy"
               className="h-72 w-full object-cover object-top lg:h-96"
