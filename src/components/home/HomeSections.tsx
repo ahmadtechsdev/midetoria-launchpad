@@ -307,23 +307,50 @@ export function Industries() {
   );
 }
 
+const NORTH_CENTRAL = ["Benue", "Kogi", "Kwara", "Nasarawa", "Niger", "Plateau"];
+const NORTH_EAST = ["Adamawa", "Bauchi", "Borno", "Gombe", "Taraba", "Yobe"];
+const NORTH_WEST = ["Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Sokoto", "Zamfara"];
+
+function StatePills({ states }: { states: string[] }) {
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {states.map((s) => (
+        <span
+          key={s}
+          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/80"
+        >
+          {s}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function Coverage() {
   const cards = [
-    { Icon: MapPinned, title: "Primary Hub", copy: "Abuja & Lagos — same-day local delivery." },
+    {
+      Icon: MapPinned,
+      title: "Primary Hub",
+      copy: "Abuja & Lagos — same-day local delivery.",
+      states: [],
+    },
     {
       Icon: RouteIcon,
-      title: "Interstate Routes",
-      copy: "Port Harcourt, Delta and Northern Nigeria.",
+      title: "South-South & South-West",
+      copy: "Port Harcourt & Delta — scheduled interstate routes.",
+      states: [],
     },
-    { Icon: Cpu, title: "Future Expansion", copy: "Nationwide coverage as our fleet grows." },
+    { Icon: Cpu, title: "North Central", copy: "6 states covered.", states: NORTH_CENTRAL },
+    { Icon: Cpu, title: "North East", copy: "6 states covered.", states: NORTH_EAST },
+    { Icon: Cpu, title: "North West", copy: "7 states covered.", states: NORTH_WEST },
   ];
   return (
     <section className="triangle-accents bg-navy py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Coverage" title="Where we deliver." light />
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <ul className="grid gap-4">
-            {cards.map(({ Icon, title, copy }, i) => (
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            {cards.map(({ Icon, title, copy, states }, i) => (
               <Reveal as="li" delay={i * 60} key={title}>
                 <div className="rounded-2xl bg-navy-soft p-6">
                   <span className="grid h-11 w-11 place-items-center rounded-full bg-brand text-brand-foreground">
@@ -331,6 +358,7 @@ export function Coverage() {
                   </span>
                   <h3 className="mt-4 text-xl text-white">{title}</h3>
                   <p className="mt-1 text-sm text-white/60">{copy}</p>
+                  {states.length > 0 && <StatePills states={states} />}
                 </div>
               </Reveal>
             ))}

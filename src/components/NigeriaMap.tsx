@@ -5,14 +5,16 @@ export function NigeriaMap({ className }: { className?: string }) {
     { x: 168, y: 268, label: "Lagos" },
     { x: 300, y: 320, label: "Port Harcourt" },
     { x: 252, y: 300, label: "Delta" },
-    { x: 330, y: 70, label: "Northern Nigeria" },
+    { x: 330, y: 100, label: "North West" },
+    { x: 380, y: 145, label: "North East" },
+    { x: 300, y: 130, label: "North Central" },
   ];
 
   return (
     <svg
       viewBox="0 0 500 380"
       role="img"
-      aria-label="Simplified map of Nigeria highlighting Midetoria coverage in Abuja, Lagos, Delta, Port Harcourt and Northern Nigeria"
+      aria-label="Simplified map of Nigeria highlighting Midetoria coverage in Abuja, Lagos, Delta, Port Harcourt, North Central, North East and North West"
       className={className}
     >
       <path
