@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import doorstepImg from "@/assets/doorstep-delivery.png";
-import teamPhoto from "@/assets/midetoria-team.jpg";
+import teamPhoto from "@/assets/midetoria-fleet.jpg";
 import { Logo } from "@/components/Logo";
 import { NigeriaMap } from "@/components/NigeriaMap";
 import { Reveal } from "@/components/Reveal";
