@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, LayoutDashboard, Phone, Quote } from "lucide-react";
 import { useState } from "react";
 import ceo from "@/assets/ceo.jpg";
-import portrait from "@/assets/brand-portrait.png";
+import portrait from "@/assets/brands-we-move.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/home/HomeSections";
 import {
@@ -277,9 +277,9 @@ export function Testimonials() {
           <Reveal className="overflow-hidden rounded-3xl bg-navy">
             <img
               src={portrait}
-              alt="Fashion brand founder who ships with Midetoria Logistics"
+              alt="Stacked parcels and packages ready for dispatch through Midetoria Logistics"
               loading="lazy"
-              className="h-72 w-full object-cover object-top lg:h-96"
+              className="h-72 w-full object-cover object-center lg:h-96"
             />
             <div className="p-6">
               <p className="text-xs font-semibold tracking-[0.3em] text-brand uppercase">
