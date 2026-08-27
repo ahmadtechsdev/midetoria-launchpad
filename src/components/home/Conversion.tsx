@@ -306,9 +306,6 @@ export function Testimonials() {
             ))}
           </ul>
         </div>
-        <p className="mt-6 text-xs text-muted-foreground">
-          Placeholder testimonials — swap with real partner quotes when ready.
-        </p>
       </div>
     </section>
   );
