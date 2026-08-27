@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import doorstepImg from "@/assets/doorstep-delivery.png";
-import teamPhoto from "@/assets/midetoria-team.jpg";
+import fleetPhoto from "@/assets/midetoria-fleet.jpg";
 import { Logo } from "@/components/Logo";
 import { NigeriaMap } from "@/components/NigeriaMap";
 import { Reveal } from "@/components/Reveal";
@@ -219,10 +219,10 @@ export function Process() {
           <div className="grid items-stretch lg:grid-cols-2">
             <div className="relative min-h-[16rem] lg:min-h-[30rem]">
               <img
-                src={teamPhoto}
-                alt="Midetoria Logistics riders and team standing with delivery bikes outside an Abuja distribution outlet"
+                src={fleetPhoto}
+                alt="Branded Midetoria Logistics delivery motorcycles ready for dispatch"
                 loading="lazy"
-                className="h-full w-full object-cover object-[center_30%] lg:absolute lg:inset-0"
+                className="h-full w-full object-cover object-center lg:absolute lg:inset-0"
               />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/80 to-transparent lg:from-navy/50" />
             </div>
