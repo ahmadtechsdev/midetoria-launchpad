@@ -348,7 +348,7 @@ export function Coverage() {
     <section className="triangle-accents bg-navy py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading eyebrow="Coverage" title="Where we deliver." light />
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
             {cards.map(({ Icon, title, copy, states }, i) => (
               <Reveal as="li" delay={i * 60} key={title}>
@@ -363,7 +363,19 @@ export function Coverage() {
               </Reveal>
             ))}
           </ul>
-          <NigeriaMap className="w-full text-white/80" />
+          <Reveal className="flex flex-col items-center gap-6">
+            <NigeriaMap className="w-full text-white/80" />
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/70">
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-2.5 w-2.5 rounded-full bg-brand" />
+                19 states covered
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-2.5 w-2.5 rounded-full bg-brand ring-2 ring-brand/30" />
+                4 logistics hubs
+              </span>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
