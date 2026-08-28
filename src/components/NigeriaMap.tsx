@@ -62,8 +62,8 @@ const NORTH_WEST: Place[] = [
 const NORTH_EAST: Place[] = [
   { name: "Bauchi", lon: 10.0, lat: 10.7, anchor: "end" },
   { name: "Gombe", lon: 11.2, lat: 10.3 },
-  { name: "Yobe", lon: 11.7, lat: 12.2 },
-  { name: "Borno", lon: 13.0, lat: 11.8, anchor: "end" },
+  { name: "Yobe", lon: 11.7, lat: 12.4, anchor: "end" },
+  { name: "Borno", lon: 13.0, lat: 11.8 },
   { name: "Adamawa", lon: 12.4, lat: 9.3, anchor: "end" },
   { name: "Taraba", lon: 11.0, lat: 8.0 },
 ];
@@ -118,7 +118,7 @@ export function NigeriaMap({ className }: { className?: string }) {
 
   return (
     <svg
-      viewBox="0 40 500 420"
+      viewBox="30 30 480 380"
       role="img"
       aria-label="Map of Nigeria showing Midetoria coverage: hubs in Abuja, Lagos, Delta and Port Harcourt; North Central (Benue, Kogi, Kwara, Nasarawa, Niger, Plateau); North East (Adamawa, Bauchi, Borno, Gombe, Taraba, Yobe); North West (Jigawa, Kaduna, Kano, Katsina, Kebbi, Sokoto, Zamfara)"
       className={className}
